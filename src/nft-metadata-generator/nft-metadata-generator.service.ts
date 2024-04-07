@@ -4,7 +4,6 @@ import {
   Logger,
 } from '@nestjs/common';
 import { PinataService } from 'src/pinata/pinata.service';
-import { RandomPicker } from 'src/utils/random-picker.util';
 import {
   Background,
   Tier,
@@ -20,6 +19,7 @@ import {
   MetadataDto,
 } from './dto/generate-metadata-response.dto';
 import { inspect } from 'util';
+import { RandomPicker } from 'src/common/utils/random-picker.util';
 
 @Injectable()
 export class NFTMetadataGeneratorService {

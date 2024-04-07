@@ -53,4 +53,8 @@ export class ConfigSchema {
   @IsString()
   @IsNotEmpty()
   PINATA_SECRET_API_KEY: string;
+
+  @IsString()
+  @IsNotEmpty()
+  SOLANA_RPC_URL: string;
 }

@@ -4,6 +4,7 @@ import { ConfigModule } from './config/config.module';
 import { ConfigSchema } from './config/config.schema';
 import { NFTMetadataGeneratorModule } from './nft-metadata-generator/nft-metadata-generator.module';
 import { PinataModule } from './pinata/pinata.module';
+import { ContractModule } from './contract/contract.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { PinataModule } from './pinata/pinata.module';
     HealthModule,
     NFTMetadataGeneratorModule,
     PinataModule,
+    ContractModule,
   ],
   controllers: [],
   providers: [],

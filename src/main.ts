@@ -1,8 +1,8 @@
 import { NestApplication, NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
-import { getLogLevel } from './utils/get-log-level.util';
-import { setupSwagger } from './utils/setup-swagger.util';
+import { getLogLevel } from './common/utils/get-log-level.util';
+import { setupSwagger } from './common/utils/setup-swagger.util';
 import { ConfigService } from './config/config.service';
 import { ConfigSchema } from './config/config.schema';
 

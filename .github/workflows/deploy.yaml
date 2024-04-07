@@ -6,14 +6,14 @@ on:
     branches:
       - main
     paths-ignore:
-      - ".github/workflows/**"
+      - '.github/workflows/**'
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     env:
       name: ${GITHUB_REPOSITORY#*/}"-dev"
-      key: "ssh_key"
+      key: 'ssh_key'
       tag: ${GITHUB_SHA}
       host: ${{ secrets.DEV_NAME }}@${{ secrets.DEV_IP }}
 
@@ -43,6 +43,7 @@ jobs:
           sudo docker run -d --restart always -p '${{ vars.PORT }}':'${{ vars.PORT }}' \
           -e PINATA_SECRET_API_KEY='${{ secrets.PINATA_SECRET_API_KEY}}' \
           -e PINATA_API_KEY='${{ secrets.PINATA_API_KEY}}' \
+          -e SOLANA_RPC_URL='${{ secrets.SOLANA_RPC_URL}}' \
           -e HOST='${{ vars.HOST }}' \
           -e PORT='${{ vars.PORT }}' \
           --name '${{ env.name }}'-new '${{ env.name }}':'${{ env.tag }}' && \
