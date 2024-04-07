@@ -41,7 +41,7 @@ jobs:
           sudo docker load -i '${{ env.name }}'.tar && \
           sudo docker stop '${{ env.name }}' ; \
           sudo docker run -d --restart always -p '${{ vars.PORT }}':'${{ vars.PORT }}' \
-          -e PINATA_SECRET_API_KEY=${{ secrets.PINATA_SECRET_API_KEY}}' \
+          -e PINATA_SECRET_API_KEY='${{ secrets.PINATA_SECRET_API_KEY}}' \
           -e PINATA_API_KEY='${{ secrets.PINATA_API_KEY}}' \
           -e HOST='${{ vars.HOST }}' \
           -e PORT='${{ vars.PORT }}' \
