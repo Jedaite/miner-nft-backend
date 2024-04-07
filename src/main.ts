@@ -6,6 +6,8 @@ import { setupSwagger } from './utils/setup-swagger.util';
 import { ConfigService } from './config/config.service';
 import { ConfigSchema } from './config/config.schema';
 
+export const APP_GLOBAL_PREFIX: string = 'api';
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get<ConfigService<ConfigSchema>>(ConfigService);
@@ -26,8 +28,9 @@ async function bootstrap() {
     }),
   );
   app.useLogger(getLogLevel(configService.get('NODE_ENV')));
+  app.setGlobalPrefix(APP_GLOBAL_PREFIX);
 
-  setupSwagger('api', app, configService);
+  setupSwagger(APP_GLOBAL_PREFIX, app, configService);
 
   const port = configService.get<number>('PORT');
   const host = configService.get<string>('HOST');
