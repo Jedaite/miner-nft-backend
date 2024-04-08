@@ -42,6 +42,14 @@ or run in DEV-mode:
 npm run start:dev
 ```
 
+## Enpoints
+
+Swagger: `domain/api` or `http://localhost:3000/api`
+
+1. `/api/nft-metadata/generate-metadata` - GET - generate and upload NFT metadata to IPFS (Pinata)
+   
+2. `/api/contract/findNFTByMint` - GET - find NFT by mint
+
 ## Deploy
 
 Deploy your app using [Dockerfile](Dockerfile) and [deploy.yaml](github/workflows/deploy.yaml).
