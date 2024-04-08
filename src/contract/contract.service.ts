@@ -34,11 +34,11 @@ export class ContractService {
     const connection = new Connection(
       this.configService.get<string>('SOLANA_RPC_URL'),
       {
-        commitment: 'finalized',
+        commitment: 'confirmed',
       },
     );
     const provider = new AnchorProvider(connection, null, {
-      commitment: 'finalized',
+      commitment: 'confirmed',
     });
     this.program = new Program(idl, programId, provider);
 
