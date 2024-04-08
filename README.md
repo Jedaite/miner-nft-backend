@@ -42,7 +42,7 @@ or run in DEV-mode:
 npm run start:dev
 ```
 
-## Enpoints
+## Endpoints
 
 Swagger: `domain/api` or `http://localhost:3000/api`
 
